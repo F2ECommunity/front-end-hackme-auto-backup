@@ -36,3 +36,21 @@ async function backup(url, path) {
 }
 
 backup('https://hackmd.io/@FrontEndSharedDocumentTeam/SyWn-Vy1d')
+backup('https://hackmd.io/@FrontEndSharedDocumentTeam/SycaGTJyd', 'HTML')
+backup('https://hackmd.io/@FrontEndSharedDocumentTeam/HkZemp11u', 'CSS')
+backup(
+  'https://hackmd.io/@FrontEndSharedDocumentTeam/r1Lkfpyy_',
+  'Framework/Vue/Vue2'
+)
+backup(
+  'https://hackmd.io/@FrontEndSharedDocumentTeam/BJrodakJd/%2FN4lAyLG5SIC1njC3zVXvkQ',
+  'Framework/Vue/Vue3'
+)
+backup(
+  'https://hackmd.io/@FrontEndSharedDocumentTeam/B1QiM6yk_',
+  'Framework/React'
+)
+backup(
+  'https://hackmd.io/@FrontEndSharedDocumentTeam/BJCsMa1yO',
+  'Framework/Angular'
+)
