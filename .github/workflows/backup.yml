@@ -1,4 +1,4 @@
-name: Build README.md
+name: Backup hackmd
 
 on:
   schedule:
@@ -24,14 +24,13 @@ jobs:
         env:
           CI: true
 
-      - name: Update README
+      - name: Backup hackmd
         run: |-
-          node updateREADME.js
-          cat backup.md
-
+          node backup
       - name: Commit and push if changed
         run: |-
           git diff
-          git add -A
+          git config --global user.name "BACKUP-bot"
+          git add -A 
           git commit -m "BOT BACKUP" || exit 0
           git push
