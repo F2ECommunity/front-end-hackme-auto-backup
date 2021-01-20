@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "type": "module",
+  "main": "backup.js",
+  "scripts": {
+    "start": "node backup.js",
+    "lint": "eslint **.js --fix"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5"
+  },
+  "name": "front-end-hackme-auto-backup",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1"
+  },
+  "description": ""
+}

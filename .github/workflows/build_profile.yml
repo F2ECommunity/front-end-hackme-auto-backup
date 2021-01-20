@@ -1,0 +1,37 @@
+name: Build README.md
+
+on:
+  schedule:
+    - cron: '0 16 * * *'
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+          check-latest: true
+      - run: npm install
+        env:
+          CI: true
+
+      - name: Update README
+        run: |-
+          node updateREADME.js
+          cat backup.md
+
+      - name: Commit and push if changed
+        run: |-
+          git diff
+          git add -A
+          git commit -m "BOT BACKUP" || exit 0
+          git push
