@@ -3,6 +3,7 @@ CSS
 ###### tags:`css`
 
 -  基礎概念
+預處理器
 盒子模型(Box Model)
 - 常用標籤介紹
 
@@ -12,10 +13,7 @@ CSS
 # 背景
 ## background
 ```css=
-
-     
-    background-color: red; /* 背景色 */
-    /* 設定顏色的其他形式 rgba(255, 99, 71, 0.1), #ff6347 */
+    background-color: red; /* 背景色，設定顏色的其他形式 rgba(255, 99, 71, 0.1), #ff6347  */
     background-image: url("paper.gif");  /* 背景圖 */
     background-repeat: no-repeat;  /* 背景重複 */
     /* 可使用的值 
@@ -34,13 +32,10 @@ CSS
      * fixed 圖片位置不動 
      * local 自己的區塊內如果滾動時，背景圖也會跟著移動 */
     /*備註: background-attachment 值可疊加使用造成不同效果*/
-    background-clip: border-box; 
-    /* 限制背景的範圍 border-box; padding-box; content-box;*/
+    background-clip: border-box;  /* 限制背景的範圍 border-box; padding-box; content-box;*/
     background-size: 300px 100px; /* 寬，高*/
-    background-size: auto;
+    background-size: auto; /*瀏覽器自己決定，一般為0px*/
     background-origin: content-box;
-    opacity: 0.3; /* 透明度 */
-    
     
     background:lightblue url("img_tree.gif") no-repeat fixed center; 
     /*一次使用多個屬性的範例寫法，插入的語法依序是
@@ -51,6 +46,9 @@ CSS
      * background-position
      * */
 ```
+
+# DEMO
+
 # 邊框(border)，邊界(margin)，間距(padding)
 
 ![](https://i.imgur.com/MVf0edk.png)
@@ -104,13 +102,8 @@ CSS
     outline-offset: 15px;
     /* outline 距離 border 長度 */
 ```
+# DEMO
 
-## box-sizing
-```css=
-    box-sizing:content-box;
-    調整區塊的內距與邊框計算方式
-    /* border-box; box-sizing:inherit;*/
-```
 
 # 長寬
 ## width & height
@@ -158,6 +151,8 @@ CSS
     display: block; /* none 調整為不顯示 inline 顯示為內行元素 block 顯示為區塊元素 flex*/
     visibility: hidden; /* 與display none的差異是內容不會出現，但占用的位置還是會在 */
     }
+    
+    opacity: 0.3; /* 透明度 */
 
 
     /* Google Fonts */
@@ -195,13 +190,36 @@ CSS
     }
 ```
 
+# 區塊
+
+## box-sizing
+```css=
+    box-sizing:content-box;
+    調整區塊的內距與邊框計算方式
+    /* border-box; box-sizing:inherit;*/
+```
+
+# 浮動
+
+## float / clear
+``` css=
+img {
+float: right; /* left none inherit */
+clear: both;
+}
+```
+
+# 顯示
+``` css=
+p {
+display: in-line; /* left none inherit */
+clear: both;
+}
+```
 
 
 ### 
 ```css=
-
-
-
 
 
 /* table 補充屬性 RWD border border-collapse border-spacing caption-side empty-cells table-layout */
@@ -225,10 +243,7 @@ background-color: #eee;
 overflow: visible; /* hidden scroll auto */
 }
 
-img {
-float: right; /* left none inherit */
-clear: both;
-}
+
 
 /* CSS 選取器分為五個種類
 Simple selectors，Combinator selectors，Pseudo-class selectors，Pseudo-elements selectors，Attribute selectors */
@@ -273,17 +288,19 @@ width: 120px;
 margin-left: 35px;
 display: block;
 }
+```
 
-/* 透明度 */
-div {
-background: rgba(76, 175, 80, 0.3) /* Green background with 30% opacity */
-opacity: 0.3;
-}
+```css=
 
 /* form表單常用的css */
 textarea {resize: none;}
 select { border-radius: 4px;}
 
+
+
+
+
+/*額外補充*/
 
 /*內鍵記數器範例*/
 body {
@@ -294,9 +311,6 @@ h2::before {
 counter-increment: section;
 content: "Section " counter(section) ": ";
 }
-
-
-/*額外補充*/
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -316,8 +330,8 @@ border-image: url(border.png) 30 stretch;
 
 /* transform */
 div{
-transform: translate(50px, 100px);
-transform: rotate(20deg);
+    transform: translate(50px, 100px);
+    transform: rotate(20deg);
 }
 
 
@@ -351,11 +365,9 @@ background-color: lightgreen;
 }
 }
 
-</style>
-<body>
+```
 
-
-
+``` html=
 <!--添加CSS的三種方式
 1.外部(External) CSS
 2.內部(Internal) CSS
@@ -401,7 +413,6 @@ Simple Pagination
 header
 Navigation Menu
 Content Main Content Content
-
 ```
 # RWD響應式網頁
 ``` css=
