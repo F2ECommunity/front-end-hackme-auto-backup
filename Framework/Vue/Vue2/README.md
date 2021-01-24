@@ -5,9 +5,9 @@ Vue2
 # 生命週期 life circle
 ![lifecircle](https://vuejs.org/images/lifecycle.png) 
 ## beforeCreate
-Vue組件初始化
+Vue組件初始化前，此時抓不到任何Vue實體。
 ## created
-組件按照inject所指定方法，引入父層級組件provider提供的方法，並且開始觀察變數是否有改變。
+組件按照inject所指定方法，引入父層級組件provider提供的方法，並且開始觀察變數是否有改變。通常所有非通部行為在這階段觸發。
 ## beforeMount
 在組件掛載之前會先檢查是否有使用**el選擇器**(註1)，如果有則會去檢查是否有template要掛載在特定tagName。
 ==一般都會在這時期向後端請求資料==或者 ==使用methods或者computed== 去做自己想要做的事，例如setinterval或addEventListener之類的方法...等等
@@ -34,7 +34,8 @@ Vue類別沒有提供el屬性，將會執行 $mount("#app") 把app組件裡的te
 ## destroyed
 這時期組件會銷毀值捯下次再度被呼叫使用在重新進入beforeCreate
 # Component
-## 基本組件&額外提供的方法
+Vue的寫法目前有3種
+## 基本組件
 ```javascript=
  <template>
      <div>{{helloWorld}}</div>
@@ -89,7 +90,7 @@ Vue類別沒有提供el屬性，將會執行 $mount("#app") 把app組件裡的te
          return ({})
      },
      render(h){
-         return h(h1,'Hello'+this.name)
+         return h('h1','Hello'+this.name)
      }
      //提供的方法與上面相同
  });
@@ -134,8 +135,30 @@ Vue類別沒有提供el屬性，將會執行 $mount("#app") 把app組件裡的te
 ### 命名插槽
 
 ### 插槽資料傳遞
+# 流程控制
 ## v-if
+```javascript=
+    <template>
+        <div>
+            <div v-if="">
+            </div>
+            <div v-else-if="">
+            </div>
+            <div v-else="">
+            </div>
+        </div>
+    </template>
+```
 ## v-show
+```javascript=
+    <template>
+        <div v-show="">
+            <div></div>
+        </div>
+    </template>
+```
+
+
 ## v-for
 <iframe src="https://codesandbox.io/embed/agitated-poitras-675w7?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.vue&theme=dark&view=editor"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -148,19 +171,25 @@ Vue類別沒有提供el屬性，將會執行 $mount("#app") 把app組件裡的te
 * 無限下拉選單-待施工
 
 ## v-on
-### 自訂義事件
+```javascript=
 
+```
+### 自訂義事件
+```javascript=
+
+```
 ## 資料雙向綁訂
 ### v-on:input與v-bind:value
-### v-model
 
+
+
+### v-model
+```javascript=
+
+```
 # \<style>\</style>
 ```javascript=
-<style lang="scss" scoped>
-     div{
-         background-color:#111;
-     }
-</style>
+
 ```
 ## lang
 ## scoped
@@ -233,7 +262,7 @@ export default{
 ```
 ### 提供的屬性
 **immdiate** 當組件beforeCreate初始化時觀察指定的變數是否有變動，如有變動則會呼叫handler
-**deep**     當觀察的值是Object時會通知
+**deep**     當觀察的值是Object時會須設定true
 **handler**  每當資料變動時會呼叫函式，提供了變更前與變更後的值
 ### 使用方式
 #### props
