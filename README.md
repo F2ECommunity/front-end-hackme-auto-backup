@@ -37,9 +37,12 @@ TypeScript(進階)
 
 其他工具
 ---
+[emmet]()-縮短撰寫html和css的時間
+[Bootstrap]()-加速版面設計所需的時間
 [Git](https://hackmd.io/UV0qCNQZQg6MyU5a4ORnag)-管理你的Code保留每次的更新
 [GraphQL](https://graphql.org/)-面向api資料查詢語言
 [Rxjs](https://rxjs-dev.firebaseapp.com)-非同步響應式編程
+
 
 練功
 ---
