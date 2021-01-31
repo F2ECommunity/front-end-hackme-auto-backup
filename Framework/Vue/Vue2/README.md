@@ -137,18 +137,13 @@ Vue的寫法目前有3種
 ### 插槽資料傳遞
 # 流程控制
 ## v-if
-```javascript=
-    <template>
-        <div>
-            <div v-if="">
-            </div>
-            <div v-else-if="">
-            </div>
-            <div v-else="">
-            </div>
-        </div>
-    </template>
-```
+<iframe src="https://codesandbox.io/embed/affectionate-heisenberg-fc4jc?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.vue&theme=dark&view=editor"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="affectionate-heisenberg-fc4jc"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ## v-show
 ```javascript=
     <template>
@@ -172,7 +167,9 @@ Vue的寫法目前有3種
 
 ## v-on
 ```javascript=
-
+<template>
+    
+</template>
 ```
 ### 自訂義事件
 ```javascript=
