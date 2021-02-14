@@ -363,3 +363,5 @@ export default{
 [awesome-vue](https://github.com/vuejs/awesome-vue)
 # Q&A
 
+# 雷坑
+1. 當使用v-for或v-if時，如果其他的節點樹結構相同，必須在結構上加上key，否則會將VNode的資料進行保留，造成資料更新不完全。
